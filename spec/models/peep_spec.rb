@@ -1,5 +1,5 @@
-require_relative '../lib/peep'
-require 'persisted_data'
+require_relative '../../lib/peep'
+require_relative '../helpers/persisted_data'
 
 describe Peep do
   describe '.create' do

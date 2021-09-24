@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 ENV['ENVIRONMENT'] = 'test'
 
-require 'truncate_database'
+require_relative './helpers/truncate_database'
 require 'simplecov'
 require 'simplecov-console'
 require 'capybara'
