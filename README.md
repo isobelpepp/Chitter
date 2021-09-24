@@ -47,3 +47,5 @@ CREATE DATABASE chitter_test;
 ```
 
 2. Run SQL commands to set up peeps table (02_create_peeps_table)
+3. Create function in terminal to add a timestamp to peeps (03_created_at_function)
+4. Add created_at column to peeps table (04_created_at_column)
