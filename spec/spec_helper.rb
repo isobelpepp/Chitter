@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+ENV['ENVIRONMENT'] = 'test'
 
 require 'simplecov'
 require 'simplecov-console'
