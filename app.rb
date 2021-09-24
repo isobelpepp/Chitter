@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'lib/peep'
+require_relative 'connect_database.rb'
 
 class Chitter < Sinatra::Base
 
@@ -9,15 +11,17 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    erb :index
-  end
-
-  post '/' do
     @peeps = Peep.all
+    erb :index
   end
 
   get '/create_peep' do
     erb :create_peep
+  end
+
+  post '/create_peep' do
+    Peep.create(content: params[:peep])
+    redirect '/'
   end
 
   run! if app_file == $0
