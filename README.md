@@ -37,3 +37,13 @@ As a Maker
 So that I can stay constantly tapped in to the shouty box of Chitter
 I want to receive an email if I am tagged in a Peep
 ```
+
+### Setting up the database
+
+1. Set up tables with SQL command (01_create_databases)
+```
+CREATE DATABASE chitter;
+CREATE DATABASE chitter_test;
+```
+
+2. Run SQL commands to set up peeps table (02_create_peeps_table)

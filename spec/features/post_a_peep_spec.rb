@@ -1,4 +1,4 @@
-feature 'Post a peep' do
+xfeature 'Post a peep' do
   scenario 'User can post a peep and see it' do
     visit('/')
     click_button('Post a Peep')
