@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-ENV['ENVIRONMENT'] = 'test'
+ENV['RACK_ENV'] = 'test'
 
 require_relative './helpers/truncate_database'
 require 'simplecov'

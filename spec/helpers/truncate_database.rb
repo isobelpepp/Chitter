@@ -1,6 +1,5 @@
-require 'pg'
+require_relative '../../lib/database_connection'
 
 def truncate_database
-  connection = PG.connect(dbname: 'chitter_test')
   connection.exec("TRUNCATE peeps;")
 end

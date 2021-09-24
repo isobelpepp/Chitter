@@ -1,16 +1,7 @@
 require 'pg'
 
-class DatabaseConnection
-
-  def self.setup(dbname)
-    @connection = PG.connect(dbname: dbname)
-  end
-
-  def self.connection
-    @connection
-  end
-
-  def self.query(sql)
-    @connection.exec(sql)
-  end
+def connection
+  ENV['RACK_ENV'] == 'test' ?
+  (PG.connect dbname: 'chitter_test') : (PG.connect dbname: 'chitter')
 end
+
