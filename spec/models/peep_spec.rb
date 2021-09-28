@@ -18,9 +18,6 @@ describe Peep do
     end
   end
 
-  # 2021-09-24 13:19:49.067616 +0100
-  # Time.now.strftime("%d/%m/%Y %H:%M")
-
   describe '.all' do
     it 'returns all the peeps in the database' do
       Peep.create(content: 'First peep')
