@@ -1,4 +1,17 @@
-Welcome <%= @user %>!
+<% if @user %>
+  Welcome <%= @user %>!
+  <form action='/user/sign_out' method='post'>
+    <button>Sign Out</button>
+  </form>
+ <% else %>
+ <form action='/user/create' method='get'> 
+  <button>Sign Up</button>
+</form>
+<% end %>
+
+<%if flash[:notice]%>
+<%= flash[:notice]%>
+<% end %>
 
 <ul>
 <% @peeps.reverse.each do |peep| %>
@@ -13,6 +26,4 @@ Welcome <%= @user %>!
   <button>Post a Peep</button>
 </form>
 
-<form action='/user/create' method='get'> 
-  <button>Sign Up</button>
-</form>
+

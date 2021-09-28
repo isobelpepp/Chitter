@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'sinatra/flash'
 require_relative 'lib/peep'
 
 class Chitter < Sinatra::Base
@@ -9,6 +10,7 @@ class Chitter < Sinatra::Base
 
   configure :development do
     register Sinatra::Reloader
+    register Sinatra::Flash
   end
 
   get '/' do
@@ -32,6 +34,12 @@ class Chitter < Sinatra::Base
 
   post '/user/create' do
     session[:user] = params[:username]
+    redirect '/'
+  end
+
+  post '/user/sign_out' do
+    session.clear
+    flash[:notice] = 'You have successfully signed out.'
     redirect '/'
   end
 
